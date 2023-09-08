@@ -30,7 +30,4 @@ public class GetController {
         System.out.println(id);
         return null;
     }
-
-
-
 }
