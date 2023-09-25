@@ -4,6 +4,7 @@ import com.aws.spring_study.dto.ModifyUserReqDto;
 import com.aws.spring_study.dto.RegisterUserReqDto;
 import com.aws.spring_study.entity.User;
 import com.aws.spring_study.repository.UserMappers;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +12,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class UsersController {
 
-    @Autowired
-    private UserMappers userMappers;
+//    @Autowired
+    private final UserMappers userMappers;
+
+//    public UsersController(UserMappers userMappers) {
+//        this.userMappers = userMappers;
+//    }
 
     @CrossOrigin
     @PostMapping("/user")
